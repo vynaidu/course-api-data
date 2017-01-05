@@ -1,2 +1,2 @@
 
-### Spring Boot study project# course-api-data
+### Spring Boot with Data study project
