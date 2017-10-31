@@ -17,10 +17,9 @@ import static io.javabrains.springbootstarter.constants.Topics.*;
 @Component
 @AllArgsConstructor
 public class DefaultCourseInitializer implements ApplicationRunner {
-
-    private CourseService courseService;
-    private TopicService topicService;
-    private LessonService lessonService;
+    private final CourseService courseService;
+    private final TopicService topicService;
+    private final LessonService lessonService;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
