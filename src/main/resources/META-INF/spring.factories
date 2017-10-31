@@ -1,3 +1,3 @@
-
+org.springframework.boot.diagnostics.FailureAnalyzer=io.javabrains.springbootstarter.init.ActiveProfileMissedFailureAnalyzer
 
 org.springframework.boot.env.EnvironmentPostProcessor=io.javabrains.springbootstarter.init.DevEnvironmentConfigurer
