@@ -3,6 +3,7 @@ package io.javabrains.springbootstarter.init;
 import io.javabrains.springbootstarter.constants.Topics;
 import io.javabrains.springbootstarter.domain.course.Course;
 import io.javabrains.springbootstarter.domain.course.CourseService;
+import io.javabrains.springbootstarter.domain.lesson.Lesson;
 import io.javabrains.springbootstarter.domain.lesson.LessonService;
 import io.javabrains.springbootstarter.domain.topic.Topic;
 import io.javabrains.springbootstarter.domain.topic.TopicService;
@@ -22,7 +23,7 @@ public class DefaultCourseInitializer implements ApplicationRunner {
     private final LessonService lessonService;
 
     @Override
-    public void run(ApplicationArguments args) throws Exception {
+    public void run(ApplicationArguments args) {
         Topic javaTopic = Topic.builder()
                 .id(JAVA_ID)
                 .name(JAVA_NAME)
@@ -33,12 +34,28 @@ public class DefaultCourseInitializer implements ApplicationRunner {
                 .name(SCALA_NAME)
                 .description(SCALA_DESCRIPTION)
                 .build();
+
+        Course javaCourse = new Course(JAVA_STREAMS_ID, JAVA_STREAMS_NAME, JAVA_STREAMS_DESCRIPTION, Topics.JAVA_ID);
+        Course scalaCourse = new Course(SCALA_FOR_IMPATIENT_ID, SCALA_FOR_IMPATIENT_NAME, SCALA_DESCRIPTION, Topics.SCALA_ID);
+
+//        Course javaCourse =Course.builder()
+//                .id(JAVA_STREAMS_ID)
+//                .name(JAVA_STREAMS_NAME)
+//                .description(JAVA_STREAMS_DESCRIPTION)
+//                .topic(javaTopic)
+//                .build();
+
+        Lesson javaLesson = new Lesson("java-intro", "Java lesson", "introduce to Java programming", javaCourse);
+        Lesson scalaLesson = new Lesson("scala-intro", "Scala lesson", "introduce to Scala programming", scalaCourse);
+
+
         topicService.addTopic(javaTopic);
         topicService.addTopic(scalaTopic);
 
-        courseService.addCourse(new Course(JAVA_STREAMS_ID, JAVA_STREAMS_NAME, JAVA_STREAMS_DESCRIPTION, Topics.JAVA_ID));
+        courseService.addCourse(javaCourse);
+        courseService.addCourse(scalaCourse);
 
-        courseService.addCourse(new Course(SCALA_FOR_IMPATIENT_ID, SCALA_FOR_IMPATIENT_NAME, SCALA_DESCRIPTION, Topics.SCALA_ID));
-
+        lessonService.addLesson(javaLesson);
+        lessonService.addLesson(scalaLesson);
     }
 }

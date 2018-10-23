@@ -31,4 +31,12 @@ public class Lesson {
 		this.description = description;
         course = new Course(courseId, "", "", "");
     }
+
+    /*public Lesson(String id, String name, String description, Course course) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.description = description;
+        this.course = course;
+    }*/
 }

@@ -1,14 +1,15 @@
 package io.javabrains.springbootstarter.domain.topic;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@AllArgsConstructor
 public class TopicController {
 
-    @Autowired
+//    @Autowired
     private TopicService topicService;
 
     @RequestMapping(value = "/topics", method = RequestMethod.GET)

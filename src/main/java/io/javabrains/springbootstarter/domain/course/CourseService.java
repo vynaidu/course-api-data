@@ -1,15 +1,16 @@
 package io.javabrains.springbootstarter.domain.course;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class CourseService {
 
-    @Autowired
+//    @Autowired
     private CourseRepository courseRepository;
 
     public List<Course> getAllCourses(String topicId) {

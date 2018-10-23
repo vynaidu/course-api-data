@@ -1,15 +1,16 @@
 package io.javabrains.springbootstarter.domain.course;
 
 import io.javabrains.springbootstarter.domain.topic.Topic;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@AllArgsConstructor
 public class CourseController {
 
-    @Autowired
+//    @Autowired
     private CourseService courseService;
 
     @RequestMapping(value = "/topics/{id}/courses", method = RequestMethod.GET)
