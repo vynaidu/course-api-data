@@ -10,7 +10,6 @@ import java.util.List;
 @AllArgsConstructor
 public class CourseController {
 
-//    @Autowired
     private CourseService courseService;
 
     @RequestMapping(value = "/topics/{id}/courses", method = RequestMethod.GET)

@@ -9,7 +9,6 @@ import java.util.List;
 @AllArgsConstructor
 public class TopicController {
 
-//    @Autowired
     private TopicService topicService;
 
     @RequestMapping(value = "/topics", method = RequestMethod.GET)
