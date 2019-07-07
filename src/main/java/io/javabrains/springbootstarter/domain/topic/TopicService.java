@@ -1,21 +1,19 @@
 package io.javabrains.springbootstarter.domain.topic;
 
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Service
-@AllArgsConstructor
 public class TopicService {
+	@Autowired  private TopicRepository topicRepository;
 
-//    @Autowired
-    private TopicRepository topicRepository;
-
-    /*private List<Topic> topics = new ArrayList<>(Arrays.asList(new Topic("spring", "Spring Framework", "Spring Framework Description"),
+    private List<Topic> topics = new ArrayList<>(Arrays.asList(new Topic("spring", "Spring Framework", "Spring Framework Description"),
             new Topic("java", "Core Java", "Core Java Description"),
-            new Topic("javascript", "JavaScript", "Java script Description")));*/
+            new Topic("javascript", "JavaScript", "Java script Description")));
 
     public List<Topic> getAllTopics() {
         ArrayList<Topic> topics = new ArrayList<>();
